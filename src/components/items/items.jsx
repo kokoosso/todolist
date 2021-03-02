@@ -1,15 +1,16 @@
 import React from 'react'
 import { Checkbox, List } from 'antd';
 
-function Itens(props,id,checkItem){
+function Itens(props){
 
-    // return <Checkbox>{props.children|| 'To-do'}</Checkbox>
+    
     return (
         <>
             <List.Item
-                onClick={() => {checkItem(id)}}
-                key={id}
+                onClick={props.checkItem}
+                key={props.id}
             >
+               {/* <Checkbox>{props.children}</Checkbox> */}
                 {props.children}
             </List.Item>
         </>

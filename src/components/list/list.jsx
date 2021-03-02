@@ -5,18 +5,19 @@ import Items from '../items/items';
 
 const ListItems = () => {
     const [todo, setTodo] = useState([])
-    const [todoName, setTodoName] = useState([])
+    const [todoName, setTodoName] = useState('')
 
     function addTodo(event) {
         
-        setTodo([
-            ...todo,
-            {
-              id: todo.length,
-              name: todoName
-            }
-        ])
-        console.log(todo)
+        setTodo(prevData => {
+           return [
+                ...prevData,
+                todoName || 'teste'
+                
+            ]
+        })
+        setTodoName("")
+        
     }
 
     return (
@@ -24,21 +25,22 @@ const ListItems = () => {
             <div>
                 <input 
                     type="text"
+                    value={todoName}
+                    onChange={event => setTodoName(event.target.value)}
+                    onKeyPress={event => {if(event.key === 'Enter'){addTodo()}}}
                 />
-                <button onClick={event => setTodo('teste')} >add</button>
+                <button onClick={addTodo} >add</button>
             </div>
             
             <List>
-                {/* {todo.map((item, index) => (
+                {todo.map((item, index) => (
                     <Items 
                         id={index}
                         key={index}
-                        oncheck={console.log('teste')}
+                        item={todo}
+                        checkItem={console.log('teste')}
                     >{item}</Items>
-                ))} */}
-                {
-                    todo
-                }
+                ))}
             </List>
         </>
     )
