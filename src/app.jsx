@@ -1,8 +1,14 @@
 import React from 'react'
+// import Items from './components/items/items'
+import ListItems from './components/list/list'
+
 
 function app(props) {
     return (
-        <div>teste</div>
+        <ListItems />
+        // <div>
+        //     <Items>teste</Items>
+        // </div>
     );
 }
 export default app
