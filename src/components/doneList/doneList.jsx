@@ -1,14 +1,18 @@
-import React, { useState, useEffect } from 'react'
-import { List,  Menu, Dropdown } from 'antd';
+import React from 'react'
+import { List } from 'antd';
 import Items from '../items/items';
-import {  DeleteOutlined, EditOutlined, CheckOutlined  } from "@ant-design/icons";
 
-const donelist=() =>{
+const donelist=({doneItems}) =>{
     return(
         <List>
-            <Items>
-                
-            </Items>
+            {doneItems.map((items,index) => (
+                <Items
+                key={index}
+                item={items}>
+                    {items}
+                </Items>
+            ))}
+            
         </List>
     )
 }
