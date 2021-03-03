@@ -5,7 +5,7 @@ import {  DeleteOutlined, EditOutlined, CheckOutlined  } from "@ant-design/icons
 
 
 
-const ListItems = () => {
+const ListItems = ({doneItems}) => {
     const [todo, setTodo] = useState([])
     const [todoName, setTodoName] = useState('')
     
@@ -23,7 +23,6 @@ const ListItems = () => {
     }
     function editTodo(id){
        setTodo(todo.map((item, index, array) => {
-           console.log(item)
             if (index === id) {
                 ((item = todoName))                  
             }
@@ -44,11 +43,12 @@ const ListItems = () => {
       };
     
       useEffect(() => {
-        const timeoutId = setTimeout(() => console.log(`I can see you're not typing. I can use "${todoName}" now!`), 1000);
+        const timeoutId = setTimeout(() =>  1000);
         return () => clearTimeout(timeoutId);
       }, [todoName]);
   
     return (
+
         <>  
             <div>
                 <input 
@@ -74,7 +74,7 @@ const ListItems = () => {
                                 <Menu.Item key="2" icon={<DeleteOutlined />} onClick={()=> removeTodo(index)}>
                                     deletar
                                 </Menu.Item>
-                                <Menu.Item key="3" icon={<CheckOutlined />}>
+                                <Menu.Item key="3" icon={<CheckOutlined />} onClick={()=>{doneItems(item); removeTodo(index)}}>
                                     feito
                                 </Menu.Item>
                             </Menu>}/>
