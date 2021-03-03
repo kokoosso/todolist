@@ -1,8 +1,10 @@
 import React from 'react'
 import { Col, Row, Card } from 'antd'
 import ListItems from '../list/list'
+import doneList from '../doneList/doneList'
 import 'antd/dist/antd.css'
 import './toDoCard.css'
+import donelist from '../doneList/doneList'
 
 function toDoCard(props){
     
@@ -16,7 +18,7 @@ function toDoCard(props){
         </Col>
         <Col span={8}>
           <Card title="coisas feitas" bordered>
-            <ListItems />
+            <doneList/>
           </Card>
         </Col>
       </Row>
