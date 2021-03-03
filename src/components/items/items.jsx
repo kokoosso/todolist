@@ -1,5 +1,5 @@
 import React from 'react'
-import { Checkbox, List } from 'antd';
+import { List } from 'antd';
 
 function Itens(props){
 
