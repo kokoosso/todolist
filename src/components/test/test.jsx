@@ -9,18 +9,18 @@ function test(){
         <div className="site-card-wrapper">
         <Row gutter={16}>
           <Col span={8}>
-            <Card title="Card title" bordered={false}>
-              Card content
+            <Card title=" a fazer" bordered={false}>
+              a fazer
             </Card>
           </Col>
           <Col span={8}>
-            <Card title="Card title" bordered={false}>
-              Card content
+            <Card title="fazendo" bordered={false}>
+              fazendo
             </Card>
           </Col>
           <Col span={8}>
-            <Card title="Card title" bordered={false}>
-              Card content
+            <Card title="feito" bordered={false}>
+              feito
             </Card>
           </Col>
         </Row>

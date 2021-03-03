@@ -1,16 +1,10 @@
 import React from 'react'
-import { List } from 'antd';
+import { List, } from 'antd';
 
-function Itens(props){
-
-    
+function Itens(props){   
     return (
         <>
-            <List.Item
-                onClick={props.checkItem}
-                key={props.id}
-            >
-               {/* <Checkbox>{props.children}</Checkbox> */}
+            <List.Item key={props.id}>     
                 {props.children}
             </List.Item>
         </>
