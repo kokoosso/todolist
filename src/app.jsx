@@ -1,7 +1,7 @@
 import React from 'react'
 import ToDoCard from './components/toDoCard/toDoCard'
 
-function app(props) {
+function app() {
     return (
         <>
             <ToDoCard></ToDoCard>
